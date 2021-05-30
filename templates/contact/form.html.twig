@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Develery{% endblock %}
+
+{% block body %}
+{% for flashMessage in app.session.flashbag.get('success') %}
+
+<div class="alert alert-success">
+    {{ flashMessage }}
+</div>
+
+{% endfor %}
+<div class="container">
+       <div class="row">
+           <div class="col-sm-4">
+               <h2 class=page-header>Develery kapcsolat felvétel</h2>
+                   {{form_start(form)}}
+                   {{form_widget(form)}}
+                   {{form_end(form)}}
+           </div>
+       </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
